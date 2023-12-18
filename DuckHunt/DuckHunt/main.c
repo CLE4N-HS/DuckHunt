@@ -2,9 +2,13 @@
 
 void main()
 {
-	sfVideoMode mode = { 800, 600, 32 };
+	sfVideoMode mode = { 1920, 1080, 32 };
 	sfRenderWindow* window;
-	window = sfRenderWindow_create(mode, "Window", sfDefaultStyle, NULL);
+	window = sfRenderWindow_create(mode, "Window", sfFullscreen, NULL);
+
+	initTools();
+	initMenu();
+
 
 
 
@@ -21,10 +25,15 @@ void main()
 			}
 		}
 
-		sfRenderWindow_clear(window, sfBlue);
+		sfRenderWindow_clear(window, sfBlack);
 
-
+		displayMenu(window);
 
 		sfRenderWindow_display(window);
+
+		if (sfKeyboard_isKeyPressed(sfKeyEscape))
+		{
+			exit(0);
+		}
 	}
 }
