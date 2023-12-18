@@ -7,7 +7,7 @@ typedef enum Buttons
 	NOBUTTON = 0,
 	EASYBUTTON,
 	HARDBUTTON,
-	QUITBUTTON,
+	QUITBUTTON
 };
 
 sfSprite* easySprite;
@@ -30,6 +30,8 @@ sfVector2f arrowPos;
 
 void initMenu()
 {
+	gameState = MENUMOD;
+
 	title = sfSprite_create();
 	titleTexture = sfTexture_createFromFile(TEXTURE_PATH"title.png", NULL);
 	sfSprite_setTexture(title, titleTexture, sfTrue);
@@ -75,18 +77,30 @@ void updateMenu(sfRenderWindow* _window)
 	{
 		ButtonMod = EASYBUTTON;
 		sfSprite_setPosition(arrowSprite, vector2f(easyPos.x - 80.f, easyPos.y));
+		if (sfMouse_isButtonPressed(sfMouseLeft))
+		{
+			gameState = EASYMOD;
+		}
 	}
 
 	else if (sfFloatRect_contains(&hardRect, mousePos.x, mousePos.y))
 	{
 		ButtonMod = HARDBUTTON;
 		sfSprite_setPosition(arrowSprite, vector2f(hardPos.x - 80.f, hardPos.y));
+		if (sfMouse_isButtonPressed(sfMouseLeft))
+		{
+			gameState = HARDMOD;
+		}
 	}
 
 	else if (sfFloatRect_contains(&quitRect, mousePos.x, mousePos.y))
 	{
 		ButtonMod = QUITBUTTON;
 		sfSprite_setPosition(arrowSprite, vector2f(quitPos.x - 80.f, quitPos.y));
+		if (sfMouse_isButtonPressed(sfMouseLeft))
+		{
+			gameState = QUITBUTTON;
+		}
 	}
 
 	else ButtonMod = NOBUTTON;

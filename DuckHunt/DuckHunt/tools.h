@@ -13,6 +13,17 @@
 
 #define TEXTURE_PATH "../Ressources/Textures/"
 
+typedef enum State
+{
+	MENUMOD = 0,
+	EASYMOD,
+	HARDMOD,
+	QUITMOD
+};
+
+int gameState;
+
+
 sfTime sftime;
 sfClock* sfclock;
 
