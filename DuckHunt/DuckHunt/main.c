@@ -51,7 +51,7 @@ void main()
 
 		sfRenderWindow_display(window);
 
-		if (sfKeyboard_isKeyPressed(sfKeyEscape))
+		if (sfKeyboard_isKeyPressed(sfKeyEscape) && gameState != MENUMOD)
 		{
 			gameState = MENUMOD;
 		}

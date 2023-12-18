@@ -105,6 +105,13 @@ void updateMenu(sfRenderWindow* _window)
 
 	else ButtonMod = NOBUTTON;
 
+
+
+	if (gameState == QUITBUTTON)
+	{
+		exit(EXIT_SUCCESS);
+	}
+
 }
 
 void displayMenu(sfRenderWindow* _window)
