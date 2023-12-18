@@ -9,6 +9,8 @@ void main()
 	initTools();
 	initMenu();
 
+	init_background();
+
 
 
 
@@ -31,8 +33,8 @@ void main()
 
 		sfRenderWindow_clear(window, sfBlack);
 
-		displayMenu(window);
-
+		if(sfKeyboard_isKeyPressed(sfKeySpace)) displayMenu(window);
+		else draw_background(window);
 		sfRenderWindow_display(window);
 
 		if (sfKeyboard_isKeyPressed(sfKeyEscape))

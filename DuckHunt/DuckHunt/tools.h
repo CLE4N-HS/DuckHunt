@@ -5,6 +5,7 @@
 #include <math.h>
 #include "SFML/Graphics.h"
 #include "menu.h"
+#include "Background.h"
 
 #define WINDOW_LENGTH 1920
 #define WINDOW_HEIGHT 1080
