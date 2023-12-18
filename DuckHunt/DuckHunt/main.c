@@ -26,20 +26,34 @@ void main()
 				sfRenderWindow_close(window);
 			}
 		}
-
-		updateMenu(window);
+		
+		if (gameState == MENUMOD)
+		{
+			updateMenu(window);
+		}
+		else if (gameState == EASYMOD || gameState == HARDMOD)
+		{
+			//update bg (non pas toi, je parlais du background)
+		}
 
 
 
 		sfRenderWindow_clear(window, sfBlack);
 
-		if(sfKeyboard_isKeyPressed(sfKeySpace)) displayMenu(window);
-		else draw_background(window);
+		if (gameState == MENUMOD)
+		{
+			displayMenu(window);
+		}
+		else if (gameState == EASYMOD || gameState == HARDMOD)
+		{
+			draw_background(window); //c'est display pd (oui là je parle de toi)
+		}
+
 		sfRenderWindow_display(window);
 
-		if (sfKeyboard_isKeyPressed(sfKeyEscape))
+		if (sfKeyboard_isKeyPressed(sfKeyEscape) && gameState != MENUMOD)
 		{
-			exit(0);
+			gameState = MENUMOD;
 		}
 	}
 }
