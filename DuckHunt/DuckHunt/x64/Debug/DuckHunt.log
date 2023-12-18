@@ -1,10 +1,7 @@
-﻿  menu.c
-C:\Users\Noé\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.h(22,2): warning C4091: 'typedef ' : ignoré à gauche de 'State' quand aucune variable n'est déclarée
-C:\Users\Noé\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\menu.c(11,2): warning C4091: 'typedef ' : ignoré à gauche de 'Buttons' quand aucune variable n'est déclarée
-C:\Users\Noé\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\menu.c(76,46): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
-C:\Users\Noé\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\menu.c(76,58): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
-C:\Users\Noé\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\menu.c(86,51): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
-C:\Users\Noé\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\menu.c(86,63): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
-C:\Users\Noé\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\menu.c(96,51): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
-C:\Users\Noé\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\menu.c(96,63): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
+﻿  Duck.c
+C:\Users\Noé\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.h(27,2): warning C4091: 'typedef ' : ignoré à gauche de 'State' quand aucune variable n'est déclarée
+C:\Users\Noé\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Duck.c(10,2): warning C4091: 'typedef ' : ignoré à gauche de 'DucksState' quand aucune variable n'est déclarée
+C:\Users\Noé\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Duck.c(16,30): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
+C:\Users\Noé\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Duck.c(16,38): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
+C:\Users\Noé\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Duck.c(41,34): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
   DuckHunt.vcxproj -> C:\Users\Noé\Documents\GitHub\DuckHunt\DuckHunt\Debug\DuckHunt.exe
