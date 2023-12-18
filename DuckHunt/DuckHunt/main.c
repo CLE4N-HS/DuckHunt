@@ -4,10 +4,11 @@ void main()
 {
 	sfVideoMode mode = { 1920, 1080, 32 };
 	sfRenderWindow* window;
-	window = sfRenderWindow_create(mode, "Window", sfFullscreen, NULL);
+	window = sfRenderWindow_create(mode, "Window", sfDefaultStyle, NULL);
 
 	initTools();
 	initMenu();
+	init_dog();
 
 	init_background();
 
@@ -47,6 +48,7 @@ void main()
 		else if (gameState == EASYMOD || gameState == HARDMOD)
 		{
 			draw_background(window); //c'est display pd (oui là je parle de toi)
+			display_dog(window);
 		}
 
 		sfRenderWindow_display(window);
