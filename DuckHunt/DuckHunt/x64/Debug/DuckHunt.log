@@ -1,2 +1,9 @@
 ﻿  menu.c
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\menu.c(11,2): warning C4091: 'typedef ' : ignoré à gauche de 'Buttons' quand aucune variable n'est déclarée
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\menu.c(74,46): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\menu.c(74,58): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\menu.c(80,51): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\menu.c(80,63): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\menu.c(86,51): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\menu.c(86,63): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
   DuckHunt.vcxproj -> C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\Debug\DuckHunt.exe
