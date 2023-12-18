@@ -25,6 +25,10 @@ void main()
 			}
 		}
 
+		updateMenu(window);
+
+
+
 		sfRenderWindow_clear(window, sfBlack);
 
 		displayMenu(window);
