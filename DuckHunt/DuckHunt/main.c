@@ -27,6 +27,10 @@ void main()
 			}
 		}
 
+		updateMenu(window);
+
+
+
 		sfRenderWindow_clear(window, sfBlack);
 
 		if(sfKeyboard_isKeyPressed(sfKeySpace)) displayMenu(window);
