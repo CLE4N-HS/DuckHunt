@@ -4,10 +4,13 @@
 #include <time.h>
 #include <math.h>
 #include "SFML/Graphics.h"
+#include "menu.h"
 
 #define WINDOW_LENGTH 1920
 #define WINDOW_HEIGHT 1080
 #define EPSILON (float)1e-6
+
+#define TEXTURE_PATH "../Ressources/Textures/"
 
 sfTime sftime;
 sfClock* sfclock;

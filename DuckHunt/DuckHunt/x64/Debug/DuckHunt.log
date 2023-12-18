@@ -1,7 +1,2 @@
-﻿  main.c
-  tools.c
-  Génération de code en cours...
-C:\Users\n.cleenewerck\Documents\DuckHunt\DuckHunt\tools.c(17,11): warning C4244: 'fonction' : conversion de 'time_t' en 'unsigned int', perte possible de données
-C:\Users\n.cleenewerck\Documents\DuckHunt\DuckHunt\tools.c(91,13): warning C4244: 'fonction' : conversion de 'float' en 'int', perte possible de données
-C:\Users\n.cleenewerck\Documents\DuckHunt\DuckHunt\tools.c(91,39): warning C4244: 'fonction' : conversion de 'float' en 'int', perte possible de données
-  DuckHunt.vcxproj -> C:\Users\n.cleenewerck\Documents\DuckHunt\Debug\DuckHunt.exe
+﻿  menu.c
+  DuckHunt.vcxproj -> C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\Debug\DuckHunt.exe
