@@ -23,6 +23,16 @@ void init_background()
 void draw_background(sfRenderWindow* _window)
 {
 	sfRenderWindow_drawSprite(_window, background, NULL);
-	sfRenderWindow_drawSprite(_window, grass_wall, NULL);
+	if (Dog_is_behind)
+	{
+		display_dog(_window);
+		sfRenderWindow_drawSprite(_window, grass_wall, NULL);
+	}
+	else
+	{
+		sfRenderWindow_drawSprite(_window, grass_wall, NULL);
+		display_dog(_window);
+	}
+	
 
 }

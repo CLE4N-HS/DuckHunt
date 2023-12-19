@@ -6,8 +6,10 @@
 #include "SFML/Graphics.h"
 #include "menu.h"
 #include "Background.h"
+#include "Dog.h"
 #include "Duck.h"
 #include "waves.h"
+
 
 #define WINDOW_LENGTH 1280
 #define WINDOW_HEIGHT 720
@@ -63,7 +65,11 @@ float GetAngleBetweenVectors(sfVector2f _v1, sfVector2f _v2);
 
 sfBool Equals(sfVector2f _v1, sfVector2f _v2);
 
+float Lerp(float a, float b, float t);
+
+
 //sfBool PlayerCanSeeEnemy(sfVector2f _pPos, sfVector2f _ePos, sfVector2f _POVPos, float _FOV, float _pAngle);
 
 sfBool IsInFOV(sfVector2f _lookingObject, sfVector2f _forwardVector, sfVector2f _targetObject, float _maxRadius, float _fieldOfView);
+
 

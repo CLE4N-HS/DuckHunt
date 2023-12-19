@@ -157,6 +157,12 @@ sfBool Equals(sfVector2f _v1, sfVector2f _v2)
     return sfFalse;
 }
 
+
+float Lerp(float a, float b, float t)
+{
+    return (b - a) * t + a;
+}
+
 /// <summary>
 /// Check if a lookingObject can see the targetedObject with a max distance and an FOV
 /// </summary>
@@ -203,3 +209,4 @@ sfBool IsInFOV(sfVector2f _lookingObject, sfVector2f _forwardVector, sfVector2f 
 //
 //    return sfFalse;
 //}
+
