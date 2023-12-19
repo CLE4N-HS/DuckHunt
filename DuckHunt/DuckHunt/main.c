@@ -4,11 +4,12 @@ void main()
 {
 	sfVideoMode mode = { 1920, 1080, 32 };
 	sfRenderWindow* window;
-	window = sfRenderWindow_create(mode, "Window", sfDefaultStyle, NULL);
+	window = sfRenderWindow_create(mode, "Window", sfFullscreen, NULL);
 
 	initTools();
 	initMenu();
 	init_dog();
+	init_shader();
 
 	init_background();
 
@@ -20,6 +21,8 @@ void main()
 
 	while (sfRenderWindow_isOpen(window))
 	{
+		restartClock();
+
 		while (sfRenderWindow_pollEvent(window, &event))
 		{
 			if (event.type == sfEvtClosed)
@@ -30,11 +33,14 @@ void main()
 		
 		if (gameState == MENUMOD)
 		{
+			if (!Dog_init) init_dog();
 			updateMenu(window);
 		}
 		else if (gameState == EASYMOD || gameState == HARDMOD)
 		{
-			//update bg (non pas toi, je parlais du background)
+			//update bg (non pas toi, je parlais du background)// Ptn tu m'as eu
+			beginning_dog();
+			update_shader(window);
 		}
 
 
@@ -48,7 +54,7 @@ void main()
 		else if (gameState == EASYMOD || gameState == HARDMOD)
 		{
 			draw_background(window); //c'est display pd (oui là je parle de toi)
-			display_dog(window);
+			display_shader(window);
 		}
 
 		sfRenderWindow_display(window);

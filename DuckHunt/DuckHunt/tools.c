@@ -94,3 +94,8 @@ sfBool Equals(sfVector2f _v1, sfVector2f _v2)
     }
     return sfFalse;
 }
+
+float Lerp(float a, float b, float t)
+{
+    return (b - a) * t + a;
+}

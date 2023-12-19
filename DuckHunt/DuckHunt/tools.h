@@ -42,3 +42,4 @@ sfVector2f Normalize(sfVector2f _vector);
 float GetSqrMagnitude(sfVector2f _vector);
 sfVector2f MultiplyVector(sfVector2f _vector, float _multiply);
 sfBool Equals(sfVector2f _v1, sfVector2f _v2);
+float Lerp(float a, float b, float t);
