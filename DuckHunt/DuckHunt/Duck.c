@@ -21,7 +21,11 @@ Ducks* initDuck(int _nb_duck)
 {
 	nb_duck = _nb_duck;
 	Ducks* ducks = malloc(_nb_duck * sizeof(Ducks));
-	
+	mouseCooldown = 0.f;
+	misses = 0;
+	allowedToMiss = sfTrue;
+	startTimer = 0.f;
+
 	for (int i = 0; i < _nb_duck; i++)
 	{
 		ducks[i].duckId = i;
@@ -69,6 +73,9 @@ void updateDuck(sfRenderWindow* _window, Ducks* ducks)
 	if (!allowedToInitDucks) allowedToInitDucks = sfTrue;
 
 	nb_duck_alive = nb_duck;
+
+	mouseCooldown += GetDeltaTime();
+	startTimer += GetDeltaTime();
 
 	for (int i = 0; i < nb_duck; i++)
 	{
@@ -258,16 +265,47 @@ void updateDuck(sfRenderWindow* _window, Ducks* ducks)
 
 		sfFloatRect rect = sfSprite_getGlobalBounds(ducks[i].duckSprite);
 
-		if (sfMouse_isButtonPressed(sfMouseLeft))
-		{
-			update_shader(_window);
+;
 
+		shooting = 0;
+		if (sfMouse_isButtonPressed(sfMouseLeft) && startTimer >1.f && Dog_jump >= 3)
+		{
+			if (mouseCooldown<0.001f)
+			{
+				makeSound(GUNSHOT);
+
+			}
+			//mouseCooldown = 0.f;
+			if (mouseCooldown <0.1f)
+			{
+
+				shooting = 1;
+				if (allowedToMiss == sfTrue)
+				{
+					misses += 1;
+					allowedToMiss = sfFalse;
+				}
+	
+			}
+			else if (mouseCooldown > 1.f)
+			{
+				mouseCooldown = 0.f;
+				allowedToMiss = sfTrue;
+
+			}
 			if (sfFloatRect_contains(&rect, (float)mousePos.x, (float)mousePos.y))
 			{
+	
 				ducks[i].duckState = DEAD;
 				ducks[i].deadDuckPos = ducks[i].duckPos;
 			}
 
+		}
+		printf("%d\n", misses);
+
+		if (misses >= nb_duck + 3)
+		{
+			gameState = MENUMOD;
 		}
 
 
