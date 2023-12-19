@@ -10,7 +10,6 @@ sfBool Dog_is_walking;
 int FrameX = 0;
 int FrameY = 0;
 int Dog_smell;
-int Dog_jump;
 
 
 float timer_beginning_dog;
@@ -42,7 +41,7 @@ void init_dog()
 
 int beginning_dog()
 {
-	if(Dog_init) Dog_init = sfFalse;
+	if(!Dog_init) Dog_init = sfTrue;
 	timer_beginning_dog += GetDeltaTime();
 	if (Dog_is_walking)
 	{

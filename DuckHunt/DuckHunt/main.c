@@ -19,6 +19,10 @@ void main()
 	init_background();
 	initWaves();
 
+	initMusic();
+
+	updateMusic();
+
 
 
 
@@ -36,11 +40,30 @@ void main()
 				sfRenderWindow_close(window);
 			}
 		}
+		if (sfMouse_isButtonPressed(sfMouseLeft))
+		{
+
+			makeSound(GUNSHOT);
+		}
 
 		
 		if (gameState == MENUMOD)
 		{
-			if (!Dog_init) init_dog();
+			if (Dog_init)
+			{
+				init_dog();
+				Dog_init = sfFalse;
+			}
+			if (allowedToInitDucks)
+			{
+				ducks = initDuck(1);
+				allowedToInitDucks = sfFalse;
+			}
+			if (allowedToInitWaves)
+			{
+				initWaves();
+				allowedToInitWaves = sfFalse;
+			}
 			updateMenu(window);
 		}
 		else if (gameState == EASYMOD || gameState == HARDMOD)

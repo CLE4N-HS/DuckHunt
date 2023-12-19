@@ -3,6 +3,8 @@
 
 int nb_duck_alive;
 
+sfBool allowedToInitDucks;
+
 typedef struct Ducks
 {
 	int duckId;

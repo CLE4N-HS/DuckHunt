@@ -8,6 +8,8 @@ void initWaves()
 
 void updateWaves()
 {
+	if (!allowedToInitWaves) allowedToInitWaves = sfTrue;
+
 	if (wavesState == NEXTWAVE)
 	{
 		nb_waves += 1;
