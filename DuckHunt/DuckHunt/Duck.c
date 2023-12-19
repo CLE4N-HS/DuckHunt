@@ -6,6 +6,9 @@ typedef enum DucksState
 {
 	WAIT = 1,
 	FLY,
+	FLYLOW,
+	FLYMID,
+	FLYHIGH,
 	DEAD
 };
 
@@ -33,15 +36,19 @@ Ducks* initDuck(int _nb_duck)
 		ducks[i].duckType = i % 3;
 		ducks[i].duckRect.height = 40;
 		ducks[i].duckRect.width = 40;
-		ducks[i].duckRect.left = ducks[i].duckType * ducks[i].duckRect.width * 3;
+		ducks[i].duckRect.left = ducks[i].duckType * ducks[i].duckRect.width * ducks[i].size;
 		ducks[i].duckRect.top = 112 + 80;
 		sfSprite_setTextureRect(ducks[i].duckSprite, ducks[i].duckRect);
 		ducks[i].FrameX = 0;
 		ducks[i].FrameY = 0;
-		ducks[i].duckPos = vector2f(100*i,200.f+i*30);
+		ducks[i].duckPos = vector2f(940.f, 540.f);
 		ducks[i].newDuckPos = vector2f((float)iRand(0, 1) * 1920 - ducks[i].duckRect.width * ducks[i].size, (float)iRand(-200, 500));
+		ducks[i].saveDuckPos = ducks[i].duckPos;
 		sfSprite_setPosition(ducks[i].duckSprite, ducks[i].duckPos);
 		ducks[i].animTimer = 0.f;
+		ducks[i].flightTimer = 0.f;
+		ducks[i].duckVelocity = vector2f(0.7f, -0.1f);
+		ducks[i].isFlipped = sfFalse;
 		ducks[i].speed = vector2f(50.f, 30.f);
 	
 	}
@@ -55,36 +62,190 @@ void updateDuck(Ducks* ducks)
 	for (int i = 0; i < nb_duck; i++)
 	{
 		ducks[i].duckState = WAIT;
-		ducks[i].animTimer += GetDeltaTime();
 		
 		if (sfKeyboard_isKeyPressed(sfKeySpace))
 		{
+			ducks[i].animTimer += GetDeltaTime();
 			ducks[i].duckState = FLY;
-			//if (ducks[i].duckPos.x <= 0 || ducks[i].duckPos.x > 1920 - ducks[i].duckRect.width * ducks[i].size)
+
+			//newTimer += GetDeltaTime()/500.f * ducks[i].speed.x;
+			//if (newTimer > 1.1f)
 			//{
-			//	ducks[i].speed.x = -ducks[i].speed.x;
+			//	newTimer = 0.f;
 			//}
-			//sfVector2f newPos;
-			//
-			//newPos = AddVectors(ducks[i].duckPos, MultiplyVector(vector2f(ducks[i].speed.x/30, ducks[i].speed.y/100), GetDeltaTime() * ducks[i].speed.x));
-			//
-			//ducks[i].duckPos = AddVectors(ducks[i].duckPos, MultiplyVector(vector2f((float)(i - 5)/4, (float)-1), GetDeltaTime() * 100));
-			newTimer += GetDeltaTime();
-			if (newTimer > 1)
+			//printf("%f\n", newTimer);
+
+			ducks[i].flightTimer += GetDeltaTime() / 50.f * ducks[i].speed.x;
+
+			//if (ducks[i].flightTimer > 1.1f)
+			//{
+			//	ducks[i].flightTimer = 0.f;
+			//}
+
+			//if (ducks[i].duckPos.x <= 0  - (3 * ducks[i].size) || ducks[i].duckPos.x >= 1920 - ducks[i].duckRect.width - (3 * ducks[i].size) || ducks[i].duckPos.y <= 0)
+			//{
+			//	//ducks[i].saveDuckPos = ducks[i].duckPos;
+			//	//ducks[i].newDuckPos = getRandomPos();
+			//	//ducks[i].flightTimer = 0.01f;
+			//	//printf("yeah");
+			//	ducks[i].duckVelocity.y *= -1.f;
+			//}
+
+			if (ducks[i].duckPos.x <= 0.f)
 			{
-				newTimer = 0.f;
+				//ducks[i].duckVelocity.x *= -1.f;
+				ducks[i].duckVelocity.x = -0.1f;
+
+				float rmd = (float)(iRand(-9, -1)) / 10;
+				printf("%f\n", rmd);
+				ducks[i].duckVelocity.x += rmd;
+				printf("%f\n", ducks[i].duckVelocity.x);
+
+				//if (ducks[i].duckVelocity.x < -1.f) { ducks[i].duckVelocity.x = -1.f; }
+				//if (ducks[i].duckVelocity.x > 1.f) { ducks[i].duckVelocity.x = 1.f; }
+
+				if (ducks[i].duckPos.x <= 0.f)
+				{
+					ducks[i].duckPos.x = 10.f;
+				}
+
 			}
+			if (ducks[i].duckPos.x >= 1920.f - ducks[i].duckRect.width * ducks[i].size)
+			{
+				//ducks[i].duckVelocity.x *= -1.f;
+				ducks[i].duckVelocity.x = 0.1f;
+				ducks[i].duckVelocity.x += (float)(iRand(1,9))/10;
+
+				//if (ducks[i].duckVelocity.x < -1.f) { ducks[i].duckVelocity.x = -1.f; }
+				//if (ducks[i].duckVelocity.x > 1.f) { ducks[i].duckVelocity.x = 1.f; }
+
+				if (ducks[i].duckPos.x >= 1920.f - ducks[i].duckRect.width * ducks[i].size)
+				{
+					ducks[i].duckPos.x = 1920.f - 10.f - ducks[i].duckRect.width * ducks[i].size;
+				}
+
+			}
+			if (ducks[i].duckPos.y <= 0.f)
+			{
+				ducks[i].duckVelocity.y *= -1.f;
+				ducks[i].duckVelocity.y = (float)(iRand(0, 10) - 5) / 10 + 0.075f;
+				ducks[i].duckVelocity.y += 0.075f;
+
+				if (ducks[i].duckVelocity.y < -1.f) { ducks[i].duckVelocity.y = -1.f; }
+				if (ducks[i].duckVelocity.y > 1.f) { ducks[i].duckVelocity.y = 1.f; }
+
+				if (ducks[i].duckPos.y <= 0.f)
+				{
+					ducks[i].duckPos.y = 10.f;
+				}
+
+			}
+			if (ducks[i].duckPos.y >= 800.f - ducks[i].duckRect.height * ducks[i].size)
+			{
+				ducks[i].duckVelocity.y *= -1.f;
+				ducks[i].duckVelocity.y = (float)(iRand(0, 10) - 5) / 10 + 0.075f;
+				ducks[i].duckVelocity.y += 0.075f;
+
+				if (ducks[i].duckVelocity.y < -1.f) { ducks[i].duckVelocity.y = -1.f; }
+				if (ducks[i].duckVelocity.y > 1.f) { ducks[i].duckVelocity.y = 1.f; }
+
+				if (ducks[i].duckPos.y >= 800.f - ducks[i].duckRect.height * ducks[i].size)
+				{
+					ducks[i].duckPos.y = 800.f - 10.f - ducks[i].duckRect.height * ducks[i].size;
+				}
+
+			}
+			//printf("%f, %f\n", ducks[i].duckPos.x, ducks[i].duckPos.y);
+
+
 			sfVector2f newPos;
-			//newPos = AddVectors(ducks[i].duckPos, LerpVector(ducks[i].duckPos, ducks[i].newDuckPos, newTimer));
-			newPos = LerpVector(ducks[i].duckPos, ducks[i].newDuckPos, newTimer);
+
+			//newPos = LerpVector(ducks[i].saveDuckPos, ducks[i].newDuckPos, ducks[i].flightTimer);
+
+			newPos = AddVectors(ducks[i].duckPos, CreateVector(MultiplyVector(ducks[i].duckVelocity, 50.f*ducks[i].speed.x * GetDeltaTime()), MultiplyVector(ducks[i].duckVelocity, 50.f * ducks[i].speed.y * GetDeltaTime())));
 
 			ducks[i].duckPos = newPos;
 			sfSprite_setPosition(ducks[i].duckSprite, ducks[i].duckPos);
 		}
 
-		
-		if (ducks[i].duckState == FLY)
+		//printf("%f, %f\n", ducks[i].duckVelocity.x, ducks[i].duckVelocity.y);
+
+
+		if (ducks[i].duckVelocity.y > 0.5f || ducks[i].duckVelocity.y < -0.5f)
 		{
+			if (ducks[i].duckVelocity.x > 0)
+			{
+				ducks[i].isFlipped = sfTrue;
+			}
+
+			else
+			{
+				ducks[i].isFlipped = sfFalse;
+			}
+			ducks[i].duckState = FLYHIGH;
+
+		}
+		else if (ducks[i].duckVelocity.y > 0.1f || ducks[i].duckVelocity.y < -0.1f)
+		{
+			if (ducks[i].duckVelocity.x > 0)
+			{
+				ducks[i].isFlipped = sfTrue;
+			}
+
+			else
+			{
+				ducks[i].isFlipped = sfFalse;
+			}
+			ducks[i].duckState = FLYMID;
+
+		}
+		else
+		{
+			if (ducks[i].duckVelocity.x > 0)
+			{
+				ducks[i].isFlipped = sfTrue;
+			}
+
+			else
+			{
+				ducks[i].isFlipped = sfFalse;
+			}
+			ducks[i].duckState = FLYLOW;
+
+		}
+
+		
+
+
+
+		if (ducks[i].duckState >= FLY && ducks[i].duckState <DEAD)
+		{
+			if (ducks[i].isFlipped == sfTrue)
+			{
+				sfSprite_setScale(ducks[i].duckSprite, vector2f(-1.f * ducks[i].size, 1.f * ducks[i].size));
+				ducks[i].isFlipped == sfFalse;
+			}
+			else
+			{
+				sfSprite_setScale(ducks[i].duckSprite, vector2f(1.f * ducks[i].size, 1.f * ducks[i].size));
+
+			}
+
+			if (ducks[i].duckState == FLYLOW)
+			{
+				ducks[i].duckRect.top = 112;
+			}
+			else if (ducks[i].duckState == FLYMID)
+			{
+				ducks[i].duckRect.top = 112 + 40;
+				
+			}
+			else if (ducks[i].duckState == FLYHIGH)
+			{
+				ducks[i].duckRect.top = 112 +40 +40;
+			}
+
+
 
 
 			if (ducks[i].animTimer > 0.5f)
@@ -97,10 +258,12 @@ void updateDuck(Ducks* ducks)
 				{
 					ducks[i].duckRect.left = ducks[i].duckType * ducks[i].duckRect.width * 3;
 				}
-				sfSprite_setTextureRect(ducks[i].duckSprite, ducks[i].duckRect);
 
 				ducks[i].animTimer = 0.f;
 			}
+
+			sfSprite_setTextureRect(ducks[i].duckSprite, ducks[i].duckRect);
+
 
 		}
 	}

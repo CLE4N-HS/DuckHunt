@@ -1,7 +1,5 @@
-﻿  Duck.c
-C:\Users\Noé\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.h(27,2): warning C4091: 'typedef ' : ignoré à gauche de 'State' quand aucune variable n'est déclarée
-C:\Users\Noé\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Duck.c(10,2): warning C4091: 'typedef ' : ignoré à gauche de 'DucksState' quand aucune variable n'est déclarée
-C:\Users\Noé\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Duck.c(16,30): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
-C:\Users\Noé\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Duck.c(16,38): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
-C:\Users\Noé\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Duck.c(41,34): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
-  DuckHunt.vcxproj -> C:\Users\Noé\Documents\GitHub\DuckHunt\DuckHunt\Debug\DuckHunt.exe
+﻿  main.c
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\tools.h(27,2): warning C4091: 'typedef ' : ignoré à gauche de 'State' quand aucune variable n'est déclarée
+  (compiler le fichier source 'main.c')
+  
+  DuckHunt.vcxproj -> C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\Debug\DuckHunt.exe

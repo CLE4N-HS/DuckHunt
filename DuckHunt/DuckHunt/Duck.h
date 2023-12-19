@@ -14,7 +14,11 @@ typedef struct Ducks
 	sfIntRect duckRect;
 	sfVector2f duckPos;
 	sfVector2f newDuckPos;
+	sfVector2f saveDuckPos;
 	float animTimer;
+	float flightTimer;
+	sfVector2f duckVelocity;
+	sfBool isFlipped;
 	sfVector2f speed;
 
 }Ducks;
