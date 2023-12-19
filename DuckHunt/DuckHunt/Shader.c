@@ -38,7 +38,7 @@ void init_shader()
 
 void update_shader(sfRenderWindow* _window)
 {
-	if (sfKeyboard_isKeyPressed(sfKeySpace))shooting = 1;
+	if (sfMouse_isButtonPressed(sfMouseLeft) && gameState >= EASYMOD && gameState <= HARDMOD) shooting = 1;
 	else shooting = 0;
 
 	timer_shader += GetDeltaTime();
