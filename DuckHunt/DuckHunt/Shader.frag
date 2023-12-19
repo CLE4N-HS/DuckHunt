@@ -3,6 +3,15 @@ uniform sampler2D u_Texture;
 uniform vec2 iResolution;
 uniform float Timer;
 uniform int is_shooting;
+
+//float len(vec2 uv)
+//{
+//    float racine = uv.x*uv.x + uv.y * uv.y;
+//    float sum = racine/racine;
+//    return sum;
+//}
+
+
 void main()
 {
     // Normalized pixel coordinates (from 0 to 1)
@@ -14,7 +23,7 @@ void main()
     float a = 0.;
     if(is_shooting ==0)
     {
-        
+ 
         a  =  0.;
     }
     else

@@ -1,9 +1,48 @@
-﻿  Dog.c
-C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\tools.h(31,2): warning C4091: 'typedef ' : ignoré à gauche de 'State' quand aucune variable n'est déclarée
-  (compiler le fichier source 'Dog.c')
-  
-C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\tools.h(41,2): warning C4091: 'typedef ' : ignoré à gauche de 'WavesState' quand aucune variable n'est déclarée
-  (compiler le fichier source 'Dog.c')
-  
-C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Dog.c(103): warning C4716: 'beginning_dog' : doit retourner une valeur
-  DuckHunt.vcxproj -> C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\Debug\DuckHunt.exe
+﻿  Background.c
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.h(31,2): warning C4091: 'typedef ' : ignoré à gauche de 'State' quand aucune variable n'est déclarée
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.h(41,2): warning C4091: 'typedef ' : ignoré à gauche de 'WavesState' quand aucune variable n'est déclarée
+  Dog.c
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.h(31,2): warning C4091: 'typedef ' : ignoré à gauche de 'State' quand aucune variable n'est déclarée
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.h(41,2): warning C4091: 'typedef ' : ignoré à gauche de 'WavesState' quand aucune variable n'est déclarée
+  Duck.c
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.h(31,2): warning C4091: 'typedef ' : ignoré à gauche de 'State' quand aucune variable n'est déclarée
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.h(41,2): warning C4091: 'typedef ' : ignoré à gauche de 'WavesState' quand aucune variable n'est déclarée
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Duck.c(13,2): warning C4091: 'typedef ' : ignoré à gauche de 'DucksState' quand aucune variable n'est déclarée
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Duck.c(17,30): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Duck.c(17,38): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Duck.c(196,25): warning C4553: '==' : résultat de l'expression non utilisé ; souhaitiez-vous utiliser '=' ?
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Duck.c(247,45): warning C4133: 'fonction' : types incompatibles - de 'sfRenderWindow *' à 'const sfWindow *'
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Duck.c(271,35): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Duck.c(274,32): warning C4244: '+=' : conversion de 'float' en 'int', perte possible de données
+  main.c
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.h(31,2): warning C4091: 'typedef ' : ignoré à gauche de 'State' quand aucune variable n'est déclarée
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.h(41,2): warning C4091: 'typedef ' : ignoré à gauche de 'WavesState' quand aucune variable n'est déclarée
+  menu.c
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.h(31,2): warning C4091: 'typedef ' : ignoré à gauche de 'State' quand aucune variable n'est déclarée
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.h(41,2): warning C4091: 'typedef ' : ignoré à gauche de 'WavesState' quand aucune variable n'est déclarée
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\menu.c(11,2): warning C4091: 'typedef ' : ignoré à gauche de 'Buttons' quand aucune variable n'est déclarée
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\menu.c(76,46): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\menu.c(76,58): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\menu.c(86,51): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\menu.c(86,63): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\menu.c(96,51): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\menu.c(96,63): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
+  Shader.c
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.h(31,2): warning C4091: 'typedef ' : ignoré à gauche de 'State' quand aucune variable n'est déclarée
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.h(41,2): warning C4091: 'typedef ' : ignoré à gauche de 'WavesState' quand aucune variable n'est déclarée
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Shader.c(18,28): warning C4133: 'fonction' : types incompatibles - de 'sfRectangleShape *' à 'sfCircleShape *'
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Shader.c(19,25): warning C4133: 'fonction' : types incompatibles - de 'sfRectangleShape *' à 'sfCircleShape *'
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Shader.c(24,22): warning C4098: 'init_shader' : fonction 'void' retournant une valeur
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Shader.c(30,23): warning C4098: 'init_shader' : fonction 'void' retournant une valeur
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Shader.c(46,68): warning C4133: 'fonction' : types incompatibles - de 'sfRenderWindow *' à 'const sfWindow *'
+  tools.c
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.h(31,2): warning C4091: 'typedef ' : ignoré à gauche de 'State' quand aucune variable n'est déclarée
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.h(41,2): warning C4091: 'typedef ' : ignoré à gauche de 'WavesState' quand aucune variable n'est déclarée
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.c(17,11): warning C4244: 'fonction' : conversion de 'time_t' en 'unsigned int', perte possible de données
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.c(182,84): warning C4244: 'fonction' : conversion de 'double' en 'float', perte possible de données
+  waves.c
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.h(31,2): warning C4091: 'typedef ' : ignoré à gauche de 'State' quand aucune variable n'est déclarée
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\tools.h(41,2): warning C4091: 'typedef ' : ignoré à gauche de 'WavesState' quand aucune variable n'est déclarée
+  Génération de code en cours...
+C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\DuckHunt\Dog.c(103): warning C4716: 'beginning_dog' : doit retourner une valeur
+  DuckHunt.vcxproj -> C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\Debug\DuckHunt.exe
