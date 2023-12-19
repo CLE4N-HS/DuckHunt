@@ -38,7 +38,7 @@ void main()
 		else if (gameState == EASYMOD || gameState == HARDMOD)
 		{
 			//update bg (non pas toi, je parlais du background)
-			updateDuck(ducks);
+			updateDuck(window, ducks);
 		}
 
 

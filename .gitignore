@@ -8,3 +8,5 @@
 *.exe
 *.recipe
 *.*.recipe
+*.ipch
+*.db
