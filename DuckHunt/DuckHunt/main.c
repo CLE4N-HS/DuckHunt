@@ -4,12 +4,15 @@ void main()
 {
 	sfVideoMode mode = { 1920, 1080, 32 };
 	sfRenderWindow* window;
-	window = sfRenderWindow_create(mode, "Window", sfFullscreen, NULL);
+	window = sfRenderWindow_create(mode, "Window", sfDefaultStyle, NULL);
 
 	initTools();
 	initMenu();
+
 	init_dog();
 	init_shader();
+
+	Ducks* ducks = initDuck(10);
 
 	init_background();
 
@@ -30,6 +33,7 @@ void main()
 				sfRenderWindow_close(window);
 			}
 		}
+
 		
 		if (gameState == MENUMOD)
 		{
@@ -38,9 +42,11 @@ void main()
 		}
 		else if (gameState == EASYMOD || gameState == HARDMOD)
 		{
-			//update bg (non pas toi, je parlais du background)// Ptn tu m'as eu
+
 			beginning_dog();
 			update_shader(window);
+			updateDuck(window, ducks);
+
 		}
 
 
@@ -53,8 +59,9 @@ void main()
 		}
 		else if (gameState == EASYMOD || gameState == HARDMOD)
 		{
-			draw_background(window); //c'est display pd (oui là je parle de toi)
+			draw_background(window);
 			display_shader(window);
+			displayDuck(window, ducks);
 		}
 
 		sfRenderWindow_display(window);

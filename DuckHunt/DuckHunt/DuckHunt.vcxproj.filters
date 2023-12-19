@@ -27,10 +27,7 @@
     <ClCompile Include="Background.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Dog.c">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="Shader.c">
+    <ClCompile Include="Duck.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,14 +41,8 @@
     <ClInclude Include="Background.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Dog.h">
+    <ClInclude Include="Duck.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Shader.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Shader.frag" />
   </ItemGroup>
 </Project>
