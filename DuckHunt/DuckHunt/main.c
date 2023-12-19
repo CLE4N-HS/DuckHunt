@@ -40,11 +40,6 @@ void main()
 				sfRenderWindow_close(window);
 			}
 		}
-		if (sfMouse_isButtonPressed(sfMouseLeft))
-		{
-
-			makeSound(GUNSHOT);
-		}
 
 		
 		if (gameState == MENUMOD)

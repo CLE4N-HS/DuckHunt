@@ -7,11 +7,11 @@ sfRectangleShape* rectangle;
 sfVector2f mouse_pos;
 
 float timer_shader;
-int shooting = 0;
+
 void init_shader()
 {
 	shader = NULL;
-
+	shooting = 0;
 	rectangle = sfRectangleShape_create();
 	sfRectangleShape_setFillColor(rectangle, sfWhite);
 	sfRectangleShape_setSize(rectangle, vector2f(1920, 1080));
@@ -38,8 +38,8 @@ void init_shader()
 
 void update_shader(sfRenderWindow* _window)
 {
-	if (sfMouse_isButtonPressed(sfMouseLeft) && gameState >= EASYMOD && gameState <= HARDMOD) shooting = 1;
-	else shooting = 0;
+	//if (sfMouse_isButtonPressed(sfMouseLeft) && gameState >= EASYMOD && gameState <= HARDMOD) shooting = 1;
+	//else shooting = 0;
 
 	timer_shader += GetDeltaTime();
 	sfShader_setCurrentTextureUniform(shader, "u_Texture");

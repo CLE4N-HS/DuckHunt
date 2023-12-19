@@ -1,6 +1,12 @@
 #pragma once
 #include "tools.h"
 
+float mouseCooldown;
+
+int misses;
+sfBool allowedToMiss;
+float startTimer;
+
 int nb_duck_alive;
 
 sfBool allowedToInitDucks;

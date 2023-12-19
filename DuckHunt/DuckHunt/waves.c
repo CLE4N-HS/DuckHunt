@@ -18,6 +18,6 @@ void updateWaves()
 
 	if (wavesState == SHOWWAVES)
 	{
-		printf("%d\n", nb_waves);
+		//printf("%d\n", nb_waves);
 	}
 }
