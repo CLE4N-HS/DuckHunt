@@ -287,7 +287,7 @@ void updateDuck(sfRenderWindow* _window, Ducks* ducks)
 				}
 	
 			}
-			else if (mouseCooldown > 1.f)
+			else if (mouseCooldown > 0.4f)
 			{
 				mouseCooldown = 0.f;
 				allowedToMiss = sfTrue;
@@ -301,7 +301,7 @@ void updateDuck(sfRenderWindow* _window, Ducks* ducks)
 			}
 
 		}
-		printf("%d\n", misses);
+		//printf("%d\n", misses);
 
 		if (misses >= nb_duck + 3)
 		{
