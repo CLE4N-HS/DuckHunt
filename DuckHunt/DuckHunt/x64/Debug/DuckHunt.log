@@ -1,5 +1,12 @@
-﻿  main.c
+﻿  Duck.c
 C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\tools.h(27,2): warning C4091: 'typedef ' : ignoré à gauche de 'State' quand aucune variable n'est déclarée
-  (compiler le fichier source 'main.c')
+  (compiler le fichier source 'Duck.c')
   
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Duck.c(13,2): warning C4091: 'typedef ' : ignoré à gauche de 'DucksState' quand aucune variable n'est déclarée
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Duck.c(17,30): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Duck.c(17,38): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Duck.c(193,25): warning C4553: '==' : résultat de l'expression non utilisé ; souhaitiez-vous utiliser '=' ?
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Duck.c(244,45): warning C4133: 'fonction' : types incompatibles - de 'sfRenderWindow *' à 'const sfWindow *'
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Duck.c(268,35): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Duck.c(271,32): warning C4244: '+=' : conversion de 'float' en 'int', perte possible de données
   DuckHunt.vcxproj -> C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\Debug\DuckHunt.exe

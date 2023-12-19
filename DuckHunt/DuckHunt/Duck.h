@@ -15,8 +15,10 @@ typedef struct Ducks
 	sfVector2f duckPos;
 	sfVector2f newDuckPos;
 	sfVector2f saveDuckPos;
+	sfVector2f deadDuckPos;
 	float animTimer;
 	float flightTimer;
+	float deadTimer;
 	sfVector2f duckVelocity;
 	sfBool isFlipped;
 	sfVector2f speed;
@@ -26,5 +28,5 @@ typedef struct Ducks
 //Ducks* ducks;
 
 Ducks* initDuck(int _nb_duck);
-void updateDuck(Ducks* _ducks);
+void updateDuck(sfRenderWindow* _window, Ducks* _ducks);
 void displayDuck(sfRenderWindow* _window, Ducks* _ducks);
