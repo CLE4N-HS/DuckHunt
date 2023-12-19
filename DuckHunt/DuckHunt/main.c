@@ -4,7 +4,7 @@ void main()
 {
 	sfVideoMode mode = { 1920, 1080, 32 };
 	sfRenderWindow* window;
-	window = sfRenderWindow_create(mode, "Window", sfDefaultStyle, NULL);
+	window = sfRenderWindow_create(mode, "Window", sfFullscreen, NULL);
 
 	initTools();
 	initMenu();
