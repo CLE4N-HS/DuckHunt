@@ -134,18 +134,25 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Background.c" />
+    <ClCompile Include="Dog.c" />
     <ClCompile Include="Duck.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="menu.c" />
+    <ClCompile Include="Shader.c" />
     <ClCompile Include="tools.c" />
     <ClCompile Include="waves.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Background.h" />
+    <ClInclude Include="Dog.h" />
     <ClInclude Include="Duck.h" />
     <ClInclude Include="menu.h" />
+    <ClInclude Include="Shader.h" />
     <ClInclude Include="tools.h" />
     <ClInclude Include="waves.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shader.frag" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

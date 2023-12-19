@@ -9,6 +9,7 @@
 #include "Dog.h"
 #include "Duck.h"
 #include "waves.h"
+#include "Shader.h"
 
 
 #define WINDOW_LENGTH 1280

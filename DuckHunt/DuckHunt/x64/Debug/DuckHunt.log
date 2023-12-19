@@ -1,15 +1,9 @@
-﻿  Duck.c
-C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\tools.h(28,2): warning C4091: 'typedef ' : ignoré à gauche de 'State' quand aucune variable n'est déclarée
-  (compiler le fichier source 'Duck.c')
+﻿  Dog.c
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\tools.h(31,2): warning C4091: 'typedef ' : ignoré à gauche de 'State' quand aucune variable n'est déclarée
+  (compiler le fichier source 'Dog.c')
   
-C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\tools.h(38,2): warning C4091: 'typedef ' : ignoré à gauche de 'WavesState' quand aucune variable n'est déclarée
-  (compiler le fichier source 'Duck.c')
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\tools.h(41,2): warning C4091: 'typedef ' : ignoré à gauche de 'WavesState' quand aucune variable n'est déclarée
+  (compiler le fichier source 'Dog.c')
   
-C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Duck.c(13,2): warning C4091: 'typedef ' : ignoré à gauche de 'DucksState' quand aucune variable n'est déclarée
-C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Duck.c(17,30): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
-C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Duck.c(17,38): warning C4244: 'fonction' : conversion de 'int' en 'float', perte possible de données
-C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Duck.c(196,25): warning C4553: '==' : résultat de l'expression non utilisé ; souhaitiez-vous utiliser '=' ?
-C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Duck.c(247,45): warning C4133: 'fonction' : types incompatibles - de 'sfRenderWindow *' à 'const sfWindow *'
-C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Duck.c(271,35): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
-C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Duck.c(274,32): warning C4244: '+=' : conversion de 'float' en 'int', perte possible de données
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Dog.c(103): warning C4716: 'beginning_dog' : doit retourner une valeur
   DuckHunt.vcxproj -> C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\Debug\DuckHunt.exe
