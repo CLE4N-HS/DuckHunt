@@ -25,7 +25,7 @@ Ducks* initDuck(int _nb_duck)
 	for (int i = 0; i < _nb_duck; i++)
 	{
 		ducks[i].duckId = i;
-		ducks[i].duckState = FLY;
+		ducks[i].duckState = WAIT;
 		ducks[i].duckSprite = sfSprite_create();
 		ducks[i].duckTexture = sfTexture_createFromFile(TEXTURE_PATH"all.png", NULL);
 		sfSprite_setTexture(ducks[i].duckSprite, ducks[i].duckTexture, sfTrue);
@@ -49,7 +49,12 @@ Ducks* initDuck(int _nb_duck)
 		ducks[i].deadTimer = -1.f;
 		ducks[i].duckVelocity = vector2f((float)(iRand(4, 12)) / 10, (float)(iRand(0, 10) - 5) / 10 + 0.075f);
 		ducks[i].isFlipped = sfFalse;
-		ducks[i].speed = vector2f(50.f, 30.f);
+
+		if (gameState == EASYMOD)
+		{
+			ducks[i].speed = vector2f(50.f, 30.f);
+		}
+		else ducks[i].speed = vector2f(100.f, 60.f);
 	
 	}
 
@@ -60,16 +65,21 @@ Ducks* initDuck(int _nb_duck)
 
 void updateDuck(sfRenderWindow* _window, Ducks* ducks)
 {
+
+	if (!allowedToInitDucks) allowedToInitDucks = sfTrue;
+
 	nb_duck_alive = nb_duck;
 
 	for (int i = 0; i < nb_duck; i++)
 	{
-		//ducks[i].duckState = WAIT;
+		if (Dog_jump >= 3 && ducks[i].duckState == WAIT)
+		{
+			ducks[i].duckState = FLY;
+		}
 		
 		if (ducks[i].duckState >= FLY && ducks[i].duckState <DEAD)
 		{
 			ducks[i].animTimer += GetDeltaTime();
-			//ducks[i].duckState = FLY;
 
 
 			ducks[i].flightTimer += GetDeltaTime() / 50.f * ducks[i].speed.x;
@@ -268,11 +278,14 @@ void updateDuck(sfRenderWindow* _window, Ducks* ducks)
 
 			if (ducks[i].deadTimer >= 0.f)
 			{
-				ducks[i].duckRect.left = 40.f + ducks[i].duckType * ducks[i].duckRect.width * 3;
-				if (ducks[i].deadTimer >= 0.2f)
+				if (ducks[i].duckPos.y < 840.f)
 				{
-					ducks[i].duckRect.left += 40.f;
-					if (ducks[i].deadTimer >= 0.4f) ducks[i].deadTimer = 0.f;
+					ducks[i].duckRect.left = 40.f + ducks[i].duckType * ducks[i].duckRect.width * 3;
+					if (ducks[i].deadTimer >= 0.2f)
+					{
+						ducks[i].duckRect.left += 40.f;
+						if (ducks[i].deadTimer >= 0.4f) ducks[i].deadTimer = 0.f;
+					}
 				}
 			}
 			else

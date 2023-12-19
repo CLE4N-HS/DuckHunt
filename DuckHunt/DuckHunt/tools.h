@@ -4,12 +4,14 @@
 #include <time.h>
 #include <math.h>
 #include "SFML/Graphics.h"
+#include "SFML/Audio.h"
 #include "menu.h"
 #include "Background.h"
 #include "Dog.h"
 #include "Duck.h"
 #include "waves.h"
 #include "Shader.h"
+#include "music.h"
 
 
 #define WINDOW_LENGTH 1280
@@ -21,6 +23,8 @@
 #define LERP(a,b,t) (b-a)*t+a
 
 #define TEXTURE_PATH "../Ressources/Textures/"
+#define MUSIC_PATH "../Ressources/Musics/"
+#define SOUND_PATH "../Ressources/SoundsFX/"
 
 typedef enum State
 {

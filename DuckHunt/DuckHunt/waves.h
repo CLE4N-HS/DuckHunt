@@ -1,6 +1,7 @@
 #pragma once
 #include "tools.h"
 
+sfBool allowedToInitWaves;
 int nb_waves;
 
 void initWaves();
