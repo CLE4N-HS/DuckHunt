@@ -8,6 +8,10 @@ void main()
 
 	initTools();
 	initMenu();
+
+	init_dog();
+	init_shader();
+
 	Ducks* ducks = initDuck(10);
 
 	init_background();
@@ -33,12 +37,16 @@ void main()
 		
 		if (gameState == MENUMOD)
 		{
+			if (!Dog_init) init_dog();
 			updateMenu(window);
 		}
 		else if (gameState == EASYMOD || gameState == HARDMOD)
 		{
-			//update bg (non pas toi, je parlais du background)
+
+			beginning_dog();
+			update_shader(window);
 			updateDuck(window, ducks);
+
 		}
 
 
@@ -51,7 +59,8 @@ void main()
 		}
 		else if (gameState == EASYMOD || gameState == HARDMOD)
 		{
-			draw_background(window); //c'est display pd (oui là je parle de toi)
+			draw_background(window);
+			display_shader(window);
 			displayDuck(window, ducks);
 		}
 
