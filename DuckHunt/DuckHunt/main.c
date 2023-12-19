@@ -9,12 +9,15 @@ void main()
 	initTools();
 	initMenu();
 
+	Ducks* ducks = initDuck(1);
+
+
 	init_dog();
 	init_shader();
 
-	Ducks* ducks = initDuck(10);
 
 	init_background();
+	initWaves();
 
 
 
@@ -63,6 +66,14 @@ void main()
 			display_shader(window);
 			displayDuck(window, ducks);
 		}
+
+		if (wavesState == NEXTWAVE)
+		{
+			ducks = initDuck(nb_waves+1);
+		}
+		updateWaves();
+
+
 
 		sfRenderWindow_display(window);
 

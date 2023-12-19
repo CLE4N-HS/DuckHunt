@@ -8,6 +8,8 @@
 #include "Background.h"
 #include "Dog.h"
 #include "Duck.h"
+#include "waves.h"
+#include "Shader.h"
 
 
 #define WINDOW_LENGTH 1280
@@ -29,6 +31,16 @@ typedef enum State
 };
 
 int gameState;
+
+typedef enum WavesState
+{
+	WAITWAVES = 0,
+	SHOOT,
+	NEXTWAVE,
+	SHOWWAVES
+};
+
+int wavesState;
 
 sfTime sftime;
 sfClock* sfclock;

@@ -35,30 +35,33 @@ Ducks* initDuck(int _nb_duck)
 		ducks[i].duckRect.height = 40;
 		ducks[i].duckRect.width = 40;
 		ducks[i].duckRect.left = ducks[i].duckType * ducks[i].duckRect.width * ducks[i].size;
-		ducks[i].duckRect.top = 112 + 80;
+		ducks[i].duckRect.top = 192;
 		sfSprite_setTextureRect(ducks[i].duckSprite, ducks[i].duckRect);
 		ducks[i].FrameX = 0;
 		ducks[i].FrameY = 0;
-		ducks[i].duckPos = vector2f(940.f, 540.f);
+		ducks[i].duckPos = vector2f((float)iRand(0, 1920 - ducks[i].duckRect.width * ducks[i].size), 800.f);
 		ducks[i].newDuckPos = vector2f((float)iRand(0, 1) * 1920 - ducks[i].duckRect.width * ducks[i].size, (float)iRand(-200, 500));
 		ducks[i].saveDuckPos = ducks[i].duckPos;
-		ducks[i].deadDuckPos = vector2f(940.f, 540.f);
+		ducks[i].deadDuckPos = vector2f(-1.f, -1.f);
 		sfSprite_setPosition(ducks[i].duckSprite, ducks[i].duckPos);
 		ducks[i].animTimer = 0.f;
 		ducks[i].flightTimer = 0.f;
 		ducks[i].deadTimer = -1.f;
-		ducks[i].duckVelocity = vector2f(0.7f, -0.1f);
+		ducks[i].duckVelocity = vector2f((float)(iRand(4, 12)) / 10, (float)(iRand(0, 10) - 5) / 10 + 0.075f);
 		ducks[i].isFlipped = sfFalse;
 		ducks[i].speed = vector2f(50.f, 30.f);
 	
 	}
+
+	nb_duck_alive = _nb_duck;
 
 	return ducks;
 }
 
 void updateDuck(sfRenderWindow* _window, Ducks* ducks)
 {
-	
+	nb_duck_alive = nb_duck;
+
 	for (int i = 0; i < nb_duck; i++)
 	{
 		//ducks[i].duckState = WAIT;
@@ -76,7 +79,7 @@ void updateDuck(sfRenderWindow* _window, Ducks* ducks)
 			{
 				ducks[i].duckVelocity.x = -0.1f;
 
-				float rmd = (float)(iRand(-9, -1)) / 10;
+				float rmd = (float)(iRand(-12, -4)) / 10;
 				ducks[i].duckVelocity.x += rmd;
 
 
@@ -90,7 +93,7 @@ void updateDuck(sfRenderWindow* _window, Ducks* ducks)
 			if (ducks[i].duckPos.x >= 1920.f - ducks[i].duckRect.width * ducks[i].size)
 			{
 				ducks[i].duckVelocity.x = 0.1f;
-				ducks[i].duckVelocity.x += (float)(iRand(1,9))/10;
+				ducks[i].duckVelocity.x += (float)(iRand(4,12))/10;
 
 				if (ducks[i].duckPos.x >= 1920.f - ducks[i].duckRect.width * ducks[i].size)
 				{
@@ -282,7 +285,19 @@ void updateDuck(sfRenderWindow* _window, Ducks* ducks)
 
 			if (ducks[i].deadTimer >= 0.f)
 			{
-				ducks[i].duckPos = AddVectors(ducks[i].duckPos, MultiplyVector(vector2f(0.f, 1.f), 200.f * GetDeltaTime()));
+				if (ducks[i].duckPos.y < 840.f)
+				{
+					ducks[i].duckPos = AddVectors(ducks[i].duckPos, MultiplyVector(vector2f(0.f, 1.f), 400.f * GetDeltaTime()));
+				}
+				else
+				{
+					nb_duck_alive--;
+				}
+
+				if (nb_duck_alive <= 0)
+				{
+					wavesState = NEXTWAVE;
+				}
 			}
 			sfSprite_setPosition(ducks[i].duckSprite, ducks[i].duckPos);
 		}
