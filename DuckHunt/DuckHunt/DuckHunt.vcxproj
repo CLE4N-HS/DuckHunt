@@ -134,12 +134,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Background.c" />
+    <ClCompile Include="Duck.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="menu.c" />
     <ClCompile Include="tools.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Background.h" />
+    <ClInclude Include="Duck.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="tools.h" />
   </ItemGroup>
