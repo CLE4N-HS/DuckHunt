@@ -85,9 +85,20 @@ void main()
 		}
 		else if (gameState == EASYMOD || gameState == HARDMOD)
 		{
-			draw_background(window);
+			sfRenderWindow_drawSprite(window, background, NULL);
+			if (Dog_is_behind)
+			{
+				display_dog(window);
+				displayDuck(window, ducks);
+				sfRenderWindow_drawSprite(window, grass_wall, NULL);
+			}
+			else
+			{
+				displayDuck(window, ducks);
+				sfRenderWindow_drawSprite(window, grass_wall, NULL);
+				display_dog(window);
+			}
 			display_shader(window);
-			displayDuck(window, ducks);
 		}
 
 		if (wavesState == NEXTWAVE)

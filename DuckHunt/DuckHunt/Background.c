@@ -1,9 +1,5 @@
 #include "Background.h"
-sfSprite* background;
-sfTexture* background_t;
 
-sfSprite* grass_wall;
-sfTexture* grass_wall_t;
 
 void init_background()
 {
@@ -22,14 +18,17 @@ void init_background()
 
 void draw_background(sfRenderWindow* _window)
 {
+	
 	sfRenderWindow_drawSprite(_window, background, NULL);
 	if (Dog_is_behind)
 	{
 		display_dog(_window);
+		//displayDuck(_window, newducks);
 		sfRenderWindow_drawSprite(_window, grass_wall, NULL);
 	}
 	else
 	{
+		//displayDuck(_window, newducks);
 		sfRenderWindow_drawSprite(_window, grass_wall, NULL);
 		display_dog(_window);
 	}

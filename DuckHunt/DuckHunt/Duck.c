@@ -258,13 +258,16 @@ void updateDuck(sfRenderWindow* _window, Ducks* ducks)
 
 		sfFloatRect rect = sfSprite_getGlobalBounds(ducks[i].duckSprite);
 
-		if (sfFloatRect_contains(&rect, (float)mousePos.x, (float)mousePos.y))
+		if (sfMouse_isButtonPressed(sfMouseLeft))
 		{
-			if (sfMouse_isButtonPressed(sfMouseLeft))
+			update_shader(_window);
+
+			if (sfFloatRect_contains(&rect, (float)mousePos.x, (float)mousePos.y))
 			{
 				ducks[i].duckState = DEAD;
 				ducks[i].deadDuckPos = ducks[i].duckPos;
 			}
+
 		}
 
 
