@@ -1,6 +1,8 @@
 #pragma once
 #include "tools.h"
 
+int nb_duck_alive;
+
 typedef struct Ducks
 {
 	int duckId;

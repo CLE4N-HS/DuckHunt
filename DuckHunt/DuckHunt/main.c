@@ -8,9 +8,10 @@ void main()
 
 	initTools();
 	initMenu();
-	Ducks* ducks = initDuck(10);
+	Ducks* ducks = initDuck(1);
 
 	init_background();
+	initWaves();
 
 
 
@@ -37,7 +38,6 @@ void main()
 		}
 		else if (gameState == EASYMOD || gameState == HARDMOD)
 		{
-			//update bg (non pas toi, je parlais du background)
 			updateDuck(window, ducks);
 		}
 
@@ -51,9 +51,17 @@ void main()
 		}
 		else if (gameState == EASYMOD || gameState == HARDMOD)
 		{
-			draw_background(window); //c'est display pd (oui là je parle de toi)
+			draw_background(window);
 			displayDuck(window, ducks);
 		}
+
+		if (wavesState == NEXTWAVE)
+		{
+			ducks = initDuck(nb_waves+1);
+		}
+		updateWaves();
+
+
 
 		sfRenderWindow_display(window);
 
