@@ -2,7 +2,11 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
+<<<<<<< Updated upstream
       <FullPath>C:\Users\b.ansel\Documents\GitHub\DuckHunt\DuckHunt\Debug\DuckHunt.exe</FullPath>
+=======
+      <FullPath>C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\Debug\DuckHunt.exe</FullPath>
+>>>>>>> Stashed changes
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
