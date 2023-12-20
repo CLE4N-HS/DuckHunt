@@ -25,7 +25,7 @@ void init_shader()
 	}
 	else
 	{
-		shader = sfShader_createFromFile(NULL, NULL, "Shader.frag");
+		shader = sfShader_createFromFile(NULL, NULL, "../Shader.frag");
 		if (shader == NULL)
 			return EXIT_FAILURE;
 		renderState.shader = shader;

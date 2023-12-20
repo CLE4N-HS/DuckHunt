@@ -1,8 +1,13 @@
-﻿  Text.c
+﻿  Shader.c
 C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\tools.h(36,2): warning C4091: 'typedef ' : ignoré à gauche de 'State' quand aucune variable n'est déclarée
-  (compiler le fichier source 'Text.c')
+  (compiler le fichier source 'Shader.c')
   
 C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\tools.h(46,2): warning C4091: 'typedef ' : ignoré à gauche de 'WavesState' quand aucune variable n'est déclarée
-  (compiler le fichier source 'Text.c')
+  (compiler le fichier source 'Shader.c')
   
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Shader.c(18,28): warning C4133: 'fonction' : types incompatibles - de 'sfRectangleShape *' à 'sfCircleShape *'
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Shader.c(19,25): warning C4133: 'fonction' : types incompatibles - de 'sfRectangleShape *' à 'sfCircleShape *'
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Shader.c(24,22): warning C4098: 'init_shader' : fonction 'void' retournant une valeur
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Shader.c(30,23): warning C4098: 'init_shader' : fonction 'void' retournant une valeur
+C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\DuckHunt\Shader.c(46,68): warning C4133: 'fonction' : types incompatibles - de 'sfRenderWindow *' à 'const sfWindow *'
   DuckHunt.vcxproj -> C:\Users\n.cleenewerck\Documents\Github\DuckHunt\DuckHunt\Debug\DuckHunt.exe
