@@ -39,7 +39,7 @@ void init_text()
 void update_text()
 {
 	int result = nb_duck+3 - misses;
-	if (result < 0)result += 1;
+	if (result < 0)result =0;
 	sprintf(nombre, "%d", result);
 	sfText_setString(text, nombre);
 }

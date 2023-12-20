@@ -1,0 +1,1 @@
+Depuis Visual Studio le jeu se lance en Debug et Release mais les .exe crashent
