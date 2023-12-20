@@ -105,7 +105,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>..\CSFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
@@ -140,6 +140,7 @@
     <ClCompile Include="menu.c" />
     <ClCompile Include="music.c" />
     <ClCompile Include="Shader.c" />
+    <ClCompile Include="Text.c" />
     <ClCompile Include="tools.c" />
     <ClCompile Include="waves.c" />
   </ItemGroup>
@@ -150,6 +151,7 @@
     <ClInclude Include="menu.h" />
     <ClInclude Include="music.h" />
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="Text.h" />
     <ClInclude Include="tools.h" />
     <ClInclude Include="waves.h" />
   </ItemGroup>

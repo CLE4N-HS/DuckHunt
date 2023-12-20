@@ -12,6 +12,7 @@
 #include "waves.h"
 #include "Shader.h"
 #include "music.h"
+#include "Text.h"
 
 
 #define WINDOW_LENGTH 1280

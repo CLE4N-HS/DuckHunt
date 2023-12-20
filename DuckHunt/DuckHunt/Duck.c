@@ -1,6 +1,6 @@
 #include "Duck.h"
 
-int nb_duck = 1;
+
 
 typedef enum DucksState
 {

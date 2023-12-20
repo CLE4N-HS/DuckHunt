@@ -23,6 +23,8 @@ void main()
 
 	updateMusic();
 
+	init_text();
+
 
 
 
@@ -67,6 +69,7 @@ void main()
 			beginning_dog();
 			update_shader(window);
 			updateDuck(window, ducks);
+			update_text();
 
 		}
 
@@ -86,12 +89,14 @@ void main()
 				display_dog(window);
 				displayDuck(window, ducks);
 				sfRenderWindow_drawSprite(window, grass_wall, NULL);
+				display_text(window);
 			}
 			else
 			{
 				displayDuck(window, ducks);
 				sfRenderWindow_drawSprite(window, grass_wall, NULL);
 				display_dog(window);
+				display_text(window);
 			}
 			display_shader(window);
 		}
