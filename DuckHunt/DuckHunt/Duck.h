@@ -6,6 +6,7 @@ float mouseCooldown;
 int misses;
 sfBool allowedToMiss;
 float startTimer;
+int nb_duck;
 
 int nb_duck_alive;
 
