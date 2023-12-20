@@ -2,6 +2,8 @@
 
 
 
+int nb_deadDucks = 0;
+
 typedef enum DucksState
 {
 	WAIT = 1,
@@ -54,11 +56,11 @@ Ducks* initDuck(int _nb_duck)
 		ducks[i].duckVelocity = vector2f((float)(iRand(4, 12)) / 10, (float)(iRand(0, 10) - 5) / 10 + 0.075f);
 		ducks[i].isFlipped = sfFalse;
 
-		if (gameState == EASYMOD)
+		if (gameState == HARDMOD)
 		{
-			ducks[i].speed = vector2f(50.f, 30.f);
+			ducks[i].speed = vector2f(100.f, 60.f);
 		}
-		else ducks[i].speed = vector2f(100.f, 60.f);
+		else ducks[i].speed = vector2f(50.f, 30.f);
 	
 	}
 
@@ -73,6 +75,7 @@ void updateDuck(sfRenderWindow* _window, Ducks* ducks)
 	if (!allowedToInitDucks) allowedToInitDucks = sfTrue;
 
 	nb_duck_alive = nb_duck;
+	nb_deadDucks = 0;
 
 	mouseCooldown += GetDeltaTime();
 	startTimer += GetDeltaTime();
@@ -92,7 +95,7 @@ void updateDuck(sfRenderWindow* _window, Ducks* ducks)
 			ducks[i].flightTimer += GetDeltaTime() / 50.f * ducks[i].speed.x;
 
 
-			if (ducks[i].duckPos.x <= 0.f)
+			if (ducks[i].duckPos.x <= 0.f + 100.f)
 			{
 				ducks[i].duckVelocity.x = -0.1f;
 
@@ -106,11 +109,17 @@ void updateDuck(sfRenderWindow* _window, Ducks* ducks)
 					ducks[i].duckPos.x = 10.f;
 				}
 
+				//ducks[i].duckPos.x -= 120.0f;
+
+
 			}
-			if (ducks[i].duckPos.x >= 1920.f - ducks[i].duckRect.width * ducks[i].size)
+			if (ducks[i].duckPos.x >= 1920.f - ducks[i].duckRect.width * ducks[i].size +22.f)
 			{
 				ducks[i].duckVelocity.x = 0.1f;
 				ducks[i].duckVelocity.x += (float)(iRand(4,12))/10;
+
+				ducks[i].duckPos.x += 120.0f;
+
 
 				if (ducks[i].duckPos.x >= 1920.f - ducks[i].duckRect.width * ducks[i].size)
 				{
@@ -147,6 +156,7 @@ void updateDuck(sfRenderWindow* _window, Ducks* ducks)
 					ducks[i].duckPos.y = 800.f - 10.f - ducks[i].duckRect.height * ducks[i].size;
 				}
 
+				
 			}
 			//printf("%f, %f\n", ducks[i].duckPos.x, ducks[i].duckPos.y);
 
@@ -305,7 +315,18 @@ void updateDuck(sfRenderWindow* _window, Ducks* ducks)
 
 		if (misses >= nb_duck + 3)
 		{
-			gameState = MENUMOD;
+			for (int i = 0; i < nb_duck; i++)
+			{
+				if (ducks[i].duckState != DEAD)
+				{
+					nb_deadDucks++;
+				}
+			}
+			if (nb_deadDucks >= nb_duck)
+			{
+				gameState = MENUMOD;
+
+			}
 		}
 
 
